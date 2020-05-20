@@ -20,10 +20,12 @@ export default {
     }
   },
   closed: false,
-  close() {
+  close(reason) {
+    let res = 'close';
+    if (typeof reason !== 'undefined') res = reason;
     if (isLight) {
       if (!this.closed) {
-        window.parent.postMessage({ type: 'close' }, origin);
+        window.parent.postMessage({ type: res }, origin);
       }
       this.closed = true;
     }
