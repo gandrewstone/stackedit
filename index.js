@@ -10,7 +10,7 @@ const http = require('http');
 const express = require('express');
 
 const app = express();
-
+console.log('startup'); // eslint-disable-line no-console
 require('./server')(app, process.env.SERVE_V4);
 
 const port = parseInt(process.env.PORT || 8080, 10);
