@@ -13,7 +13,7 @@ const app = express();
 console.log('startup'); // eslint-disable-line no-console
 require('./server')(app, process.env.SERVE_V4);
 
-const port = parseInt(process.env.PORT || 8080, 10);
+const port = parseInt(process.env.PORT || 8002, 10);
 const httpServer = http.createServer(app);
 httpServer.listen(port, null, () => {
   console.log(`HTTP server started: http://localhost:${port}`);
